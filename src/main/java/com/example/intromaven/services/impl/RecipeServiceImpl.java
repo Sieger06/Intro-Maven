@@ -1,5 +1,6 @@
 package com.example.intromaven.services.impl;
 
+import com.example.intromaven.services.IngredientService;
 import org.springframework.stereotype.Service;
 import com.example.intromaven.model.Ingredient;
 import com.example.intromaven.model.Recipe;
@@ -14,6 +15,11 @@ import java.util.Map;
 public class RecipeServiceImpl implements RecipeService {
     private final Map<Integer, Recipe> recipeMap = new HashMap<>();
     IngredientServiceImpl ingredientService = new IngredientServiceImpl();
+
+    private IngredientService IngredientService;
+    public RecipeServiceImpl (IngredientService ingredientService){
+        this.IngredientService = IngredientService;
+    }
 
 
     private int countId = 1;

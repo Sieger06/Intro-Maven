@@ -7,7 +7,7 @@ import com.example.intromaven.model.Ingredient;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/ingredient")
+@RequestMapping()
 public class IngredientController {
     private final IngredientService ingredientService;
 
@@ -15,23 +15,23 @@ public class IngredientController {
         this.ingredientService = ingredientService;
     }
 
-    @PostMapping("/add")
+    @PostMapping()
     public String addIngredient (@RequestBody Ingredient ingredient){
         return "Рецепт успешно добавлен (ID: " + ingredientService.addIngredient(ingredient) + ")";
     }
-    @PutMapping("/edit/{id}")
+    @PutMapping()
     public boolean editIngredient (@PathVariable int id, @RequestBody Ingredient ingredient){
         return ingredientService.editIngredient(id, ingredient);
     }
-    @PutMapping("/remove/{id}")
+    @PutMapping()
     public boolean removeIngredient (@PathVariable int id){
         return ingredientService.removeIngredient(id);
     }
-    @GetMapping("/get/{id}")
+    @GetMapping()
     public String getIngredient(@PathVariable int id){
         return ingredientService.infoIngredient(id);
     }
-    @GetMapping("/get")
+    @GetMapping()
     public ArrayList<Ingredient> getAllIngredient(){
         return ingredientService.getAllIngredient();
     }
