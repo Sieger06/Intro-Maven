@@ -20,19 +20,12 @@ public class RecipeServiceImpl implements RecipeService {
     public RecipeServiceImpl (IngredientService ingredientService){
         this.IngredientService = IngredientService;
     }
-
-
     private int countId = 1;
 
     @Override
     public int addRecipe(Recipe recipe) {
         int id = countId++;
         recipeMap.put(id, recipe);
-
-/*        for (Ingredient ingredient : recipe.getIngredientList()) {
-            ingredientService.addIngredient(ingredient);
-        }*/
-
         return id;
     }
     @Override
@@ -53,7 +46,6 @@ public class RecipeServiceImpl implements RecipeService {
             return false;
         }
     }
-
     @Override
     public Recipe getRecipe (int id) {
         return recipeMap.get(id);
@@ -75,7 +67,6 @@ public class RecipeServiceImpl implements RecipeService {
         }
         return recipeListById;
     }
-
     @Override
     public ArrayList<Recipe> getRecipeByIngredients (int[] idIngredient){
         List<Ingredient> byIngredients = new ArrayList<>();
