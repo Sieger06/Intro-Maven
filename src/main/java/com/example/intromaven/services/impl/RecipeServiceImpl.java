@@ -14,11 +14,11 @@ import java.util.Map;
 @Service
 public class RecipeServiceImpl implements RecipeService {
     private final Map<Integer, Recipe> recipeMap = new HashMap<>();
-    IngredientServiceImpl ingredientService = new IngredientServiceImpl();
+  /*  IngredientServiceImpl ingredientService = new IngredientServiceImpl();*/
 
-    private IngredientService ingredientService1;
+    private IngredientService ingredientService;
     public RecipeServiceImpl (IngredientService ingredientService){
-        this.ingredientService1 = ingredientService1;
+        this.ingredientService = ingredientService;
     }
     private int countId = 1;
 
