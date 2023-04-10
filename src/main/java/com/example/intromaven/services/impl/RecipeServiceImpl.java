@@ -16,9 +16,9 @@ public class RecipeServiceImpl implements RecipeService {
     private final Map<Integer, Recipe> recipeMap = new HashMap<>();
     IngredientServiceImpl ingredientService = new IngredientServiceImpl();
 
-    private IngredientService IngredientService;
+    private IngredientService ingredientService1;
     public RecipeServiceImpl (IngredientService ingredientService){
-        this.IngredientService = IngredientService;
+        this.ingredientService1 = ingredientService1;
     }
     private int countId = 1;
 

@@ -17,7 +17,7 @@ public class RecipeController {
     public String addRecipe (@RequestBody Recipe recipe){
         return "Рецепт успешно добавлен (ID: " + recipeService.addRecipe(recipe) + ")";
     }
-    @PutMapping()
+    @PutMapping("{id}")
     public boolean editRecipe (@PathVariable("id") int id, @RequestBody Recipe recipe){
         return recipeService.editeRecipe(id, recipe);
     }
@@ -25,16 +25,16 @@ public class RecipeController {
     public boolean removeRecipe (@PathVariable("id") int id, @RequestBody Recipe recipe){
         return recipeService.editeRecipe(id, recipe);
     }
-    @GetMapping()
+    @GetMapping("{id}")
     public Recipe getRecipe(@PathVariable int id){
         return recipeService.getRecipe(id);
 
     }
-    @GetMapping()
+    @GetMapping("/all")
     public ArrayList<Recipe> getAllRecipe(){
         return recipeService.getAllRecipe();
     }
-    @GetMapping()
+    @GetMapping("/byId/{id}")
     public ArrayList<Recipe> getRecipeByIngredient(@PathVariable("ids") int... ids){
         return recipeService.getRecipeByIngredients(ids);
     }
